@@ -17,3 +17,6 @@
 .logo img {
   max-height: 100%;
 }
+
+@media screen and (max-width: 768px) {
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { useStore } from "../../store/store";
+import { useStore } from "../../../store/store";
 import classes from "./NavLogo.module.css";
-import logo from "../../assets/img/MEMO_Logo_arany.svg";
+import logo from "../../../assets/img/MEMO_Logo_arany.svg";
 
 const NavLogo = () => {
   const [state] = useStore();

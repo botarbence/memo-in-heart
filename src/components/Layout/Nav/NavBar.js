@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { useStore } from "../../store/store";
+import { useStore } from "../../../store/store";
 
 import Burger from "./Burger";
 import NavLogo from "./NavLogo";
@@ -8,9 +8,9 @@ import NavMenu from "./NavMenu";
 import Auth from "./Auth";
 import LanguageSelector from "./LanguageSelector";
 
-import classes from "./Navbar.module.css";
+import classes from "./NavBar.module.css";
 
-const Navbar = () => {
+const NavBar = () => {
   const ref = useRef();
   const [offset, setOffset] = useState();
   const [state, dispatch] = useStore();
@@ -43,4 +43,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

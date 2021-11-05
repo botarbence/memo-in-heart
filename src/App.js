@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
@@ -28,9 +28,7 @@ const App = () => {
             <Route path={"/"} exact>
               <Home />
             </Route>
-            <Route path={"/home"} exact>
-              <Redirect to="/" />
-            </Route>
+
             <Route path="/about" exact>
               <About />
             </Route>

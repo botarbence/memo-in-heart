@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useLazyLoad } from "../../../hooks/useLazyLoad";
+import { useLazyLoad } from "../../hooks/useLazyLoad";
 
 import classes from "./Card.module.css";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AccountIcon from "@material-ui/icons/AccountCircle";
-import { useStore } from "../../store/store";
-import useHttp from "../../hooks/useHttp";
+import { useStore } from "../../../store/store";
+import useHttp from "../../../hooks/useHttp";
 
 import classes from "./Auth.module.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../Nav/Navbar";
+import NavBar from "./Nav/NavBar";
 import SlideShow from "../UI/SlideShow";
 import classes from "./Header.module.css";
 import { useStore } from "../../store/store";
@@ -17,7 +17,7 @@ const Header = () => {
         <img src={logo} alt="LOGO" />
         <h2>{language.headerTitle}</h2>
       </div>
-      <Navbar />
+      <NavBar />
     </header>
   );
 };

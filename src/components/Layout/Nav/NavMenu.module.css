@@ -1,0 +1,29 @@
+.navmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .navmenu {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 7rem;
+    height: 100vh;
+    width: 100%;
+    transition: clip-path 0.4s ease-in;
+    clip-path: ellipse(0% 0% at 0% 0%);
+    -webkit-clip-path: ellipse(0% 0% at 0% 0%);
+    background-color: var(--color-secondary);
+  }
+  .open {
+    clip-path: ellipse(140% 140% at 0% 0%);
+    -webkit-clip-path: ellipse(140% 140% at 0% 0%);
+  }
+}
