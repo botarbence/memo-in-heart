@@ -1,0 +1,9 @@
+.card {
+  border: 2px solid var(--color-tertiary);
+  border-radius: 1rem 0 1rem 0;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+.burger {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  left: 1.6rem;
+  z-index: 20;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.toggletop {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.togglemiddle {
+  opacity: 0;
+}
+.togglebottom {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+}

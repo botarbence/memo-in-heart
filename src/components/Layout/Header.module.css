@@ -1,0 +1,32 @@
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 90%;
+}
+
+.wrapper img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.wrapper h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: "Courgette", cursive;
+  color: var(--color-secondary);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--color-secondary-light);
+  transform: translateY(-3rem);
+}

@@ -1,0 +1,12 @@
+.section {
+  width: 100vw;
+  /* min-height: 100vh; */
+  background-color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+  }
+}

@@ -1,0 +1,27 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  height: 4rem;
+}
+
+.input label {
+  font-size: 1rem;
+  margin: 0 0 0;
+}
+
+.input input {
+  padding: 0.5rem;
+  border: none;
+
+  background-color: #eee;
+  outline: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin: 0 0 0;
+}
+
+.error {
+  color: red;
+}

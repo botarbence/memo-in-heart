@@ -1,0 +1,19 @@
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.logo img {
+  max-height: 100%;
+}

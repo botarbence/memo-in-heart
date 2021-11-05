@@ -1,0 +1,21 @@
+.languageselector {
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  top: 2rem;
+  right: 2rem;
+  height: 2rem;
+  width: 2rem;
+  color: var(--color-primary);
+  font-size: larger;
+  user-select: none;
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.languageselector:hover {
+  color: var(--color-secondary-light);
+}

@@ -1,0 +1,12 @@
+.h2 {
+  padding: 4rem 10rem;
+}
+
+.h3 {
+  color: var(--color-tertiary);
+  padding: 0rem 10rem 3rem;
+}
+
+.p {
+  padding: 0rem 10rem 3rem;
+}
