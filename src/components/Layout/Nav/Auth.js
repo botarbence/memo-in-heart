@@ -2,6 +2,7 @@ import { useState } from "react";
 import AccountIcon from "@material-ui/icons/AccountCircle";
 import { useStore } from "../../../store/store";
 import useHttp from "../../../hooks/useHttp";
+import { APIKEY } from "../../../api";
 
 import classes from "./Auth.module.css";
 
@@ -17,8 +18,8 @@ const Auth = () => {
 
   const sendAuth = async () => {
     const url = isLogin
-      ? "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCotgedg6CPpkVxeufjKWplSpSbety3Va4"
-      : "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCotgedg6CPpkVxeufjKWplSpSbety3Va4";
+      ? `ttps://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${APIKEY}`
+      : `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${APIKEY}`;
 
     const showUser = (data) => {
       dispatch("LOGIN", { user: data.email, idToken: data.idToken });
