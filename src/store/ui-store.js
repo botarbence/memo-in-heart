@@ -15,17 +15,24 @@ const configureStore = () => {
       return { navBarStick: false };
     },
     OPEN_AUTH: () => {
-      return { loginFormOpen: true };
+      return { authOpen: true };
     },
     CLOSE_AUTH: () => {
-      return { loginFormOpen: false };
+      return { authOpen: false };
+    },
+    OPEN_MODAL: () => {
+      return { modalOpen: true };
+    },
+    CLOSE_MODAL: () => {
+      return { modalOpen: false };
     },
   };
 
   initStore(actions, {
     navMenuOpen: false,
-    loginFormOpen: false,
     navBarStick: false,
+    authOpen: false,
+    modalOpen: true,
   });
 };
 

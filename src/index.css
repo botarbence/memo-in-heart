@@ -53,3 +53,8 @@ a:active {
   transform: translateY(6rem);
   opacity: 0;
 }
+
+.modal__img {
+  display: block;
+  width: 100%;
+}

@@ -27,6 +27,7 @@ const languages = {
     productsTitle: "Egyediség, exkluzív megjelenés",
     productsContent:
       "A MEMO in Heart termékek kézzel készített egyedi design darabok. Szinte lehetetlen két teljesen egyforma tárgy elkészítése. (A gyártás során a designer alkotói szabadságát a megrendelő minden esetben elfogadja) Egy ilyen tárgy megérdemli a minőségi csomagolást! Akár ajándék, akár saját emlék, gyönyörű díszcsomagolásban szállítjuk. A kicsomagolás mindenkinek tartogat meglepetést!",
+    closeBtn: "Bezár",
   },
   en: {
     home: "Home",
@@ -50,6 +51,7 @@ const languages = {
     aboutTitle2: "Ha nincs ötleted, segítünk!",
     aboutContent2:
       "Ünnep, évforduló közeledik? Nincs ajándék ötleted, mégis egyedi teljesen személyes ajándékot szeretnél átadni? Válogass kedvedre egyedi ötleteinkből és mi megvalósítjuk a meglepetést. Az elképzeléseknek csak a fantázia szabhat határokat!",
+    closeBtn: "Close",
   },
 };
 

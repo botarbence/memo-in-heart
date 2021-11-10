@@ -18,7 +18,7 @@ const Auth = () => {
 
   const sendAuth = async () => {
     const url = isLogin
-      ? `ttps://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${APIKEY}`
+      ? `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${APIKEY}`
       : `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${APIKEY}`;
 
     const showUser = (data) => {
@@ -50,7 +50,7 @@ const Auth = () => {
   };
 
   const accountClickHandler = () => {
-    state.loginFormOpen ? dispatch("CLOSE_AUTH") : dispatch("OPEN_AUTH");
+    state.authOpen ? dispatch("CLOSE_AUTH") : dispatch("OPEN_AUTH");
   };
 
   const logoutHandler = () => {
@@ -59,57 +59,58 @@ const Auth = () => {
 
   return (
     <div
-      className={`${classes.auth} ${state.loginFormOpen ? classes.open : ""}`}
+      className={`${classes.auth} ${
+        state.authOpen ? classes["auth--open"] : ""
+      }`}
     >
       <div onClick={accountClickHandler} className={classes.icon}>
         <AccountIcon />
       </div>
-
-      {state.loginFormOpen && (
-        <div className={classes.form}>
-          <h2>
-            {state.isLoggedIn ? state.user : isLogin ? "Login" : "Sign up"}
-          </h2>
-          {!state.isLoggedIn && (
-            <form onSubmit={submitHandler}>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={user.email}
-                placeholder="Your email"
-                onChange={(e) =>
-                  setUser({ ...user, [e.target.name]: e.target.value })
-                }
-              ></input>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                value={user.password}
-                placeholder="Your password"
-                onChange={(e) =>
-                  setUser({ ...user, [e.target.name]: e.target.value })
-                }
-              ></input>
-              {error && <p>{error}</p>}
-              <button disabled={isLoading} type="submit">
-                {isLoading ? "Please Wait..." : "Submit"}
-              </button>
-            </form>
-          )}
-          <button
-            type="button"
-            onClick={state.isLoggedIn ? logoutHandler : switchAuthModeHandler}
-          >
-            {state.isLoggedIn
-              ? "Logout"
-              : isLogin
-              ? "Create new account"
-              : "Login with existing account"}
-          </button>
-        </div>
-      )}
+      <div
+        className={`${classes.form} ${
+          state.authOpen ? classes["form--open"] : ""
+        }`}
+      >
+        <h2>{state.isLoggedIn ? state.user : isLogin ? "Login" : "Sign up"}</h2>
+        {!state.isLoggedIn && (
+          <form onSubmit={submitHandler}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={user.email}
+              placeholder="Your email"
+              onChange={(e) =>
+                setUser({ ...user, [e.target.name]: e.target.value })
+              }
+            ></input>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={user.password}
+              placeholder="Your password"
+              onChange={(e) =>
+                setUser({ ...user, [e.target.name]: e.target.value })
+              }
+            ></input>
+            {error && <p>{error}</p>}
+            <button disabled={isLoading} type="submit">
+              {isLoading ? "Please Wait..." : "Submit"}
+            </button>
+          </form>
+        )}
+        <button
+          type="button"
+          onClick={state.isLoggedIn ? logoutHandler : switchAuthModeHandler}
+        >
+          {state.isLoggedIn
+            ? "Logout"
+            : isLogin
+            ? "Create new account"
+            : "Login with existing account"}
+        </button>
+      </div>
     </div>
   );
 };

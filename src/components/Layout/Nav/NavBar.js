@@ -36,7 +36,7 @@ const NavBar = () => {
     >
       <Burger />
       <NavLogo />
-      <NavMenu />
+      <NavMenu links={["home", "about", "products", "contact"]} />
       <Auth />
       <LanguageSelector />
     </nav>

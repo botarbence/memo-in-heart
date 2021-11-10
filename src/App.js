@@ -1,8 +1,11 @@
 import React, { Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
+import Modal from "./components/UI/Modal";
+import { useStore } from "./store/store";
+import img from "./assets/img/MEMO_webphoto.jpg";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
@@ -14,44 +17,39 @@ const TermsConditions = React.lazy(() => import("./pages/TermsConditions"));
 const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 
 const App = () => {
+  const [{ modalOpen }, dispatch] = useStore();
+
+  const closeModalHandler = () => {
+    dispatch("CLOSE_MODAL");
+  };
+
   return (
     <>
       <Layout>
-        <Switch>
-          <Suspense
-            fallback={
-              <div className="centered">
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <Route path={"/"} exact>
-              <Home />
-            </Route>
-
-            <Route path="/about" exact>
-              <About />
-            </Route>
-            <Route path="/products" exact>
-              <Products />
-            </Route>
-            <Route path="/contact" exact>
-              <Contact />
-            </Route>
-            <Route exact path="/frequently-asked-questions">
-              <FaqPage />
-            </Route>
-            <Route exact path="/delivery-and-returns">
-              <DeliveryReturns />
-            </Route>
-            <Route exact path="/privacy-policy">
-              <PrivacyPolicy />
-            </Route>
-            <Route exact path="/terms-and-conditions">
-              <TermsConditions />
-            </Route>
-          </Suspense>
-        </Switch>
+        {modalOpen && (
+          <Modal onClose={closeModalHandler}>
+            <img className="modal__img" src={img} alt="img" />
+          </Modal>
+        )}
+        <Suspense
+          fallback={
+            <div className="centered">
+              <LoadingSpinner />
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/frequently-asked-questions" element={<FaqPage />} />
+            <Route path="/delivery-and-returns" element={<DeliveryReturns />} />
+            <Route path="/terms-and-conditions" element={<TermsConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/" element={<Navigate to="/home" replace={true} />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </>
   );
